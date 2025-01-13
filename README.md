@@ -1,41 +1,26 @@
-# Development Setup 
+# Izidoro's Development Setup
+
+This guide proposes a robust and performant development environment (Linux OS) for the main needs of software development.
 
 
-> Terminal settings: 
+> Terminal 
 
-- zsh (plugins: git, web-search, zsh-autosuggestions, zsh-syntax-highlighting)
-- Izidoro alias
-{
-alias c='clear'
-alias ct='clear && tree'
-alias t='tree'
-alias gfp='git fetch && git pull'
-alias gss='git status'
-alias cl='clear && ls'
-alias update='sudo apt update && sudo apt upgrade -y && sudo apt clean && sudo apt autoclean && sudo apt autoremove -y'
-alias diskc='cd /mnt/c'
-alias estag='cd /mnt/c/Estagio'
-alias explorer='explorer.exe .'
-alias dt='dotnet build && dotnet run'
-alias dtb='dotnet build'
-alias dtr='dotnet run'
-}
+- [zsh settings](/terminal/zshrc.md)
 
-> Work Apps:
+> Work Apps
 
-- Git
-- VS Code 
-- Chrome
-- Figma Desktop
+- Git 
+- [VS Code](/work-apps/vs-code.md)
+- Google Chrome
 
-> Communication Apps:
+> Communication and Teamwork Apps
 
 - WhatsApp
-- Discord
+- Discord 
 
-> Technologies and Tools:
+> Tech Stack Setup
 
-- Python setup (pip, pipx, pyenv, poetry)
-- C# setup (.DOT, ASP.NET)
-- Node.js & NestJS setup (nvm, npm, npx, tsc)
-- C++ setup (cmake, g++, clang)
+- [C++](/tech-stack/cpp.md)
+- [Python](/tech-stack/python.md)
+- [C#](/tech-stack/csharp.md)
+- [JavaScript/TypeScript](/tech-stack/js-ts.md)
