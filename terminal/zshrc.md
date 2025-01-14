@@ -69,5 +69,5 @@ alias t='tree'
 alias gfp='git fetch && git pull'
 alias gss='git status'
 alias cl='clear && ls'
-alias update='sudo apt update && sudo apt upgrade -y && sudo apt clean && sudo apt autoclean && sudo apt autoremove -y'
+alias update='sudo pacman -Syu && sudo pacman -Sc && sudo pacman -Rns $(pacman -Qtdq)'
 ``` 
