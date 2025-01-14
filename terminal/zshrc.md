@@ -16,6 +16,12 @@ pacman -S zsh
 ```bash
 pacman -S curl
 ```
+
+> Install `tree`:
+```bash
+sudo pacman -S tree
+```
+
 > Install `Oh-my-zsh`:
 
 ```bash
@@ -30,6 +36,38 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 > Add plugins: 
 
+- `zsh-autosuggestion`:
+
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+
+- `zsh-syntax-highlighting`:
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+- Others plugins:
+
+```bash
+73 plugins=(git web-search zsh-autosuggestions zsh-syntax-highlighting)
+```
+
+- Reload system:
+
+```bash
+source ~/.zshrc
+```
+
+> Set alias in `.zshrc` file:
+
+```bash 
+alias c='clear'
+alias ct='clear && tree'
+alias t='tree'
+alias gfp='git fetch && git pull'
+alias gss='git status'
+alias cl='clear && ls'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt clean && sudo apt autoclean && sudo apt autoremove -y'
+``` 
