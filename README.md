@@ -10,7 +10,7 @@ This guide proposes a robust and performant development environment (Linux OS) f
 > Work Apps
 
 - Git 
-- [VS Code](/work-apps/vs-code.md)
+- VS Code
 - Google Chrome
 
 > Communication and Teamwork Apps
