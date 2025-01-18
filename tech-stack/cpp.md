@@ -4,6 +4,10 @@
 
 ```bash
 sudo pacman -S gcc
+
+# or 
+
+sudo install -y gcc
 ```
 
 > Compile and Execute:
