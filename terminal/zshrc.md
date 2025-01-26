@@ -70,4 +70,5 @@ alias gfp='git fetch && git pull'
 alias gss='git status'
 alias cl='clear && ls'
 alias update='sudo pacman -Syu && sudo pacman -Sc && sudo pacman -Rns $(pacman -Qtdq)'
+alias='cd /mnt/c'
 ``` 
