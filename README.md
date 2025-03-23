@@ -2,6 +2,12 @@
 
 This guide proposes a robust and performant development environment (Linux OS or Windows) for the main needs of software development.
 
+> Terminal & Apps
+
+  - [zsh - Ubuntu in WSL 2](terminal/zshrc.md)
+  - [tmux]() (Coming soon...)
+  - [VS Code](terminal/vscode.md)
+  - [Docker Desktop](terminal/docker.md)
 
 > Tech Stack Setup:
 
@@ -13,12 +19,7 @@ This guide proposes a robust and performant development environment (Linux OS or
 - [Python with FastAPI](tech-stack/python.md)
 - [Rust with Actix](tech-stack/rust.md)
 
-> Terminal & Apps
 
-  - [zsh - Ubuntu in WSL 2](terminal/zshrc.md)
-  - [tmux]() (Coming soon...)
-  - [VS Code](terminal/vscode.md)
-  - [Docker Desktop](terminal/docker.md)
 
 
 
