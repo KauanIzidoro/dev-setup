@@ -5,31 +5,20 @@ This guide proposes a robust and performant development environment (Linux OS or
 
 > Tech Stack Setup:
 
-#### Programming Languages
-- [C/C++]()
-- [C#]()
-- [Java]()
-- [JavaScript]()
-- [TypeScript]()
-- [Python]()
-- [Rust]()
-
-#### Setup with Frameworks
-
-- [ASP.NET]()
-- [Spring]()
-- [Node]()
-- [Nest]()
-- [FastAPI]()
-- [Actix]()
-
+- [C/C++](tech-stack/cpp.md)
+- [C# with ASP.NET](tech-stack/csharp.md)  
+- [Java with Spring](tech-stack/java.md)
+- [JavaScript with Node](tech-stack/js.md)
+- [TypeScript with Node & Nest](tech-stack/ts.md)
+- [Python with FastAPI](tech-stack/python.md)
+- [Rust with Actix](tech-stack/rust.md)
 
 > Terminal & Apps
 
-  - [zsh - Ubuntu in WSL 2]()
+  - [zsh - Ubuntu in WSL 2](terminal/zshrc.md)
   - [tmux]() (Coming soon...)
-  - [VS Code]()
-  - [Docker Desktop]()
+  - [VS Code](terminal/vscode.md)
+  - [Docker Desktop](terminal/docker.md)
 
 
 
