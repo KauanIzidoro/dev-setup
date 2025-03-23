@@ -1,6 +1,6 @@
 # Izidoro's Development Setup
 
-This guide proposes a robust and performant development environment (Linux OS) for the main needs of software development.
+This guide proposes a robust and performant development environment (Linux OS or Windows) for the main needs of software development.
 
 
 > Terminal 
@@ -11,7 +11,9 @@ This guide proposes a robust and performant development environment (Linux OS) f
 
 - Git
 - VS Code
+- Docker 
 - Google Chrome
+
 
 > Communication and Teamwork Apps
 
@@ -23,4 +25,5 @@ This guide proposes a robust and performant development environment (Linux OS) f
 - [C++](/tech-stack/cpp.md)
 - [Python](/tech-stack/python.md)
 - [C#](/tech-stack/csharp.md)
-- [JavaScript/TypeScript](/tech-stack/js-ts.md)
+- [JavaScript](/tech-stack/js.md)
+- [TypeScript](/tech-stack/ts.md)
