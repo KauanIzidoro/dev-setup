@@ -9,8 +9,7 @@ This guide proposes a robust and performant development environment (Linux OS) f
 
 > Work Apps
 
-- Git 
-<!-- - [VIM](/terminal/vim-setup.md)  -->
+- Git
 - VS Code
 - Google Chrome
 
