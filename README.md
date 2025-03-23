@@ -3,27 +3,33 @@
 This guide proposes a robust and performant development environment (Linux OS or Windows) for the main needs of software development.
 
 
-> Terminal 
+> Tech Stack Setup:
 
-- [zsh settings](/terminal/zshrc.md)
+#### Programming Languages
+- [C/C++]()
+- [C#]()
+- [Java]()
+- [JavaScript]()
+- [TypeScript]()
+- [Python]()
+- [Rust]()
 
-> Work Apps
+#### Setup with Frameworks
 
-- Git
-- VS Code
-- Docker 
-- Google Chrome
+- [ASP.NET]()
+- [Spring]()
+- [Node]()
+- [Nest]()
+- [FastAPI]()
+- [Actix]()
 
 
-> Communication and Teamwork Apps
+> Terminal & Apps
 
-- WhatsApp
-- Discord 
+  - [zsh - Ubuntu in WSL 2]()
+  - [tmux]() (Coming soon...)
+  - [VS Code]()
+  - [Docker Desktop]()
 
-> Tech Stack Setup
 
-- [C++](/tech-stack/cpp.md)
-- [Python](/tech-stack/python.md)
-- [C#](/tech-stack/csharp.md)
-- [JavaScript](/tech-stack/js.md)
-- [TypeScript](/tech-stack/ts.md)
+
