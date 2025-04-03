@@ -1,239 +1,190 @@
-\documentclass[letterpaper,11pt]{article}
+% Document class and basic packages
+\documentclass[a4paper]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
+% Essential packages
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
-\input{glyphtounicode}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage{longtable}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
-
-\urlstyle{same}
-
-\raggedbottom
+% Document settings
+\textheight=10in
+\pagestyle{empty}
 \raggedright
-\setlength{\tabcolsep}{0in}
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-%-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex}
+
+\newcommand{\area}[2]{
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
 }
 
-\newcommand{\classesList}[4]{
-    \item\small{
-        {#1 #2 #3 #4 \vspace{-2pt}}
-  }
+\newcommand{\lineunder}{
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+\newcommand{\header}[1]{
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+\newcommand{\employer}[3]{
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+\newcommand{\contact}[3]{
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
 
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\schoolwithcourses}[4]{
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\school}[4]{
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+% Begin document
 \begin{document}
+    \vspace*{-40pt}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
+    % Header section
+    \vspace*{-2pt}
+    \begin{center}
+        {\Huge \scshape {Kauan Izidoro}}\\
+        \vspace*{2pt}
+        \ {Software Engineer}\\
+        \vspace*{2pt}
+        \href{mailto:cnttkauan@gmail.com}{cnttkauan@gmail.com} | \href{tel:+55 15 996189346}{+55 15 996189346}\\
+        \vspace*{4pt}
+        \textbf{\href{https://www.linkedin.com/in/kauanizidoro/}{Linkedin | }}\textbf{\href{https://github.com/KauanIzidoro}{GitHub |}}
+        \textbf{\href{https://www.andreelias.dev}{Portfolio}}\\
+    \end{center}
 
-\begin{center}
-    {\Huge \scshape Kauan Izidoro} \\ \vspace{1pt}
-    Sorocaba, Brasil \\ \vspace{1pt}
-    \small \raisebox{-0.1\height}\faPhone\ (15) 99618-9346 ~ \href{mailto:x@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{cnttkauan@gmail.com}} ~ 
-    \href{https://linkedin.com/in//}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/kauanizidoro}}  ~
-    \href{https://github.com/}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/KauanIzidoro}}
-    \vspace{-8pt}
-\end{center}
+    % Summary section
+    \header{Summary}
+    \vspace{2mm}
+    Full-stack engineer with 5+ years of experience optimizing performance and scalability for web applications. Led engineering at a Y Combinator startup, launched SaaS products generating \$30K+ revenue, and built a 3D multiplayer game that reached 1M+ plays.
+    \vspace{2mm}
 
+    % Experience section
+    \header{Experience}
+    \vspace{2mm}
 
-%-----------EDUCATION-----------
-\section{Educação}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Senai São Paulo}{Jan. 2024 - Dez. 2025}
-      {Superior em Análise e Desenvolvimento de Sistemas}{Sorocaba, São Paulo}
-      \resumeSubheading
-      {Senai São Paulo}{Jul. 2022 - Jul. 2024}
-      {Técnico em Eletroeletrônica}{Sorocaba, São Paulo}
-  \resumeSubHeadingListEnd
+    \textbf{Resquared}\textbf{ | Full-Stack Software Engineer} \hfill  Sep 2023 - Nov 2024\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Optimized front-end performance by 40\% through React component optimization and implementing code splitting, reducing initial load time from 3s to 1.8s.
+        \item Reduced API response time by 25\% by implementing caching strategies and optimizing database queries.
+    \end{itemize}
 
-%------ABOUT-------
-\section{Sobre}
-    \resumeSubHeadingListStart
-        \small{Desenvolvedor Backend com foco na criação e otimização de aplicações que solucionam desafios reais, utilizando tecnologias modernas e boas práticas de engenharia de software. Possui experiência no desenvolvimento de soluções baseadas em microsserviços, integração de sistemas Web, Desktop, IoT e implementação de arquiteturas distribuídas, com domínio em tecnologias como Python (FastAPI, Django e Flask), TypeScript (NestJS e NodeJS), \texttt{C\#} (ASP.NET), Java (Spring), Google Cloud Platform (GCP), Amazon Web Service (AWS) e tecnologias voltadas ao desenvolvimento IIoT (C, C++, Raspberry, ESP-32, MQTT, OPC-UA e OCPP).
+    \textbf{Kalidash}\textbf{ | Senior Software Engineer } \hfill  Nov 2022 - Nov 2024\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Increased system uptime to 99.9\% by implementing robust error handling and automated monitoring, reducing downtime by 60\%.
+        \item Mentored 2 junior developers, reducing their time-to-productivity by 40\% through structured training and code reviews.
+    \end{itemize}
 
-        Expertise em bancos de dados relacionais (MySQL, PostgreSQL e SQL Server) e NoSQL (MongoDB, Apache Cassandra), além de experiência em práticas de DevOps, Cloud Computing, Linux, Docker, Kubernetes e integração de sistemas via APIs (REST, GraphQL e WebSocket). Atuação voltada para a entrega de soluções escaláveis, eficientes e alinhadas às regras de negócios.
-        }
-   \resumeSubHeadingListEnd
+    \textbf{ICE Play}\textbf{ | Cofounder \& Software Engineer} \hfill  Dec 2021 - Nov 2022\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Achieved 50\% reduction in video buffering by implementing adaptive bitrate streaming, leading to 35\% increase in user engagement.
+        \item Reduced AWS costs by 30\% through infrastructure optimization and implementing auto-scaling policies.
+    \end{itemize}
 
-%-----------EXPERIENCE-----------
-\section{Experiência}
-  \resumeSubHeadingListStart
+    \textbf{Hotmart}\textbf{ | Data Analyst Intern} \hfill  Dec 2020 - Dec 2021\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Improved data processing efficiency by 45\% by optimizing SQL queries and implementing parallel processing.
+        \item Reduced data warehouse query time by 60\% through index optimization and materialized views.
+    \end{itemize}
 
-    \resumeSubheading
-      {2RP Net Data Driven Company}{Jan. 2024 - Presente}
-      {Desenvolvedor Back-End}{Brasil (Remoto)}
-      \resumeItemListStart
-        \resumeItem{Atuo na implementação de microsserviços utilizando Python e FastAPI para facilitar a comunicação entre serviços internos e APIs como BigQuery, Vertex AI, Pub/Sub e Secret Manager na Google Cloud Platform (GCP).}
-        \resumeItem{Integro a equipe de migração de um ambiente em nuvem, criando um ambiente Sandbox para testes de rotinas analíticas, visando agilizar a validação de novas abordagens e a entrega de soluções aos clientes.}
-        \resumeItem{Uso tecnologias de LLM/IA, como a Gemini API e Gemini SDK, para desenvolver Agentes de IA, visando automatizar a documentação/tarefas triviais e melhorar a acessibilidade às informações de projetos internos e  ganhar agilidade durante sprints.}
-        \resumeItem{Utilizo práticas de DevOps, como Docker e Kubernetes, para garantir a escalabilidade, disponibilidade e eficiência das aplicações desenvolvidas.}
-        \resumeItem{Participo da integração de sistemas utilizando APIs REST e WebSocket, garantindo uma comunicação ágil e eficiente entre serviços.}
-      \resumeItemListEnd
+    % Projects section
+    \header{Projects}
+    \vspace{2mm}
 
-    \resumeSubheading
-      {Robert Bosch VM}{Jan. 2022 - Jan. 2024 - 2 anos}
-      {Analista de Automação e IoT}{Sorocaba, SP}
-      \resumeItemListStart
-        \resumeItem{Desenvolvi e implementei soluções IoT industriais utilizando ESP32, Raspberry Pi, MQTT e OPC-UA, possibilitando a conectividade de dispositivos em ambientes fabris para otimização e monitoramento de processos produtivos.}
-        \resumeItem{Atuei na integração de sistemas SCADA e MES com plataformas cloud, permitindo monitoramento remoto e coleta de dados para análises preditivas.}
-        \resumeItem{Colaborei na automação de processos industriais, aplicando C, C++, SCL e Python para controle de sensores, atuadores e equipamentos.}
-        \resumeItem{Desenvolvi APIs REST e WebSocket para facilitar a comunicação entre dispositivos de chão de fábrica e aplicações corporativas, garantindo maior eficiência e interoperabilidade.}
-        % \resumeItem{}
-    \resumeItemListEnd
-    
-  \resumeSubHeadingListEnd
-\vspace{-16pt}
+    \textbf{Court Kings 3D}\text{ | 3D Multiplayer Game } \hfill  Jun 2023\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Achieved 1M+ plays with 4.8/5 user rating, optimizing game performance to run at 60 FPS on low-end devices.
+        \item Implemented efficient WebSocket communication reducing latency by 40\% and enabling real-time multiplayer features.
+    \end{itemize}
 
-%-----------PROJECTS-----------
-% \section{Projetos}
-%     \vspace{-5pt}
-%     \resumeSubHeadingListStart
-%       \resumeProjectHeading
-%           {\textbf\faGithub\hspace{4pt}{\href{https://github.com/KauanIzidoro/<repo_name>}{Project Name 1}} $|$ \emph{Tech 1, Tech 2, Tech 3, Tech 4}}{month 2025}
-%           \resumeItemListStart
-%             \resumeItem{item 1}
-%             \resumeItem{item 2}
-%             \resumeItem{item 3}
-%           \resumeItemListEnd
-%           \vspace{-13pt}
-    %       {\textbf{Water Safer Monitoring} $|$ \emph{\texttt{C\#}, ASP.NET, SQL Server, Docker, React}}{Outubro 2024}
-    %       \resumeItemListStart
-    %         \resumeItem{}
-    %         \resumeItem{}
-    %         \resumeItem{}
-    %       \resumeItemListEnd 
-    % \resumeSubHeadingListEnd
-% \vspace{-15pt}
+    \textbf{LoveYuu}\text{ | Micro SaaS for Couples}\hfill  Sep 2024\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Generated \$25,000+ USD in revenue through organic traffic, achieving 40\% month-over-month growth.
+        \item Achieved 95\% user satisfaction rate through intuitive UI/UX design and responsive customer support.
+    \end{itemize}
 
+    \textbf{YouTube Channel}\hfill  Oct 2024\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Grew channel to 13,000+ subscribers with 500K+ monthly views, achieving 45\% audience retention rate.
+        \item Secured \$10,000+ in brand sponsorships through high-quality technical content and engaged community.
+    \end{itemize}
 
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Habilidades Técnicas}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Linguagens}{: C++, Java, JavaScript, TypeScript, Python, \texttt{C\#}} \\
-     \textbf{Frameworks e Ferramentas}{: NestJS, NodeJS, FastAPI, ASP.NET, Spring} \\
-     \textbf{Banco de dados}{: MySQL, SQL Server, PostgreSQL, MongoDB, Apache Cassandra} \\
-     \textbf{Cloud e DevOps}{: Docker, Kubernetes, Linux, Git, AWS, GCP} \\
-     \textbf{Metodologias}{: Agile, Scrum, CI/CD, System Design, Design Patterns} \\
-    }} 
- \end{itemize}
- \vspace{-16pt}
+    \textbf{Next.js SaaS Template}\hfill  Nov 2024\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Generated \$5,000+ USD in revenue through organic sales, with 85\% customer satisfaction rate.
+        \item Reduced development time by 60\% for new SaaS projects through reusable components and documentation.
+    \end{itemize}
 
-%
-%-----------CERTIFICATIONS-----------
- \section{Certificações}
-    \item Introduction to Data Analytics on Google Cloud \\
-    \item Analyze Speech and Language with Google APIs Skill Badge
-    \item Build a Secure Google Cloud Network Skill Badge
-    \item Build and Deploy Machine Learning Solutions on Vertex AI Skill Badge
-    \item Create ML Models with BigQuery ML Skill Badge
-    \item Google Cloud Computing Foundations Certificate
-    \item Google Cloud Computing Foundations: Data, ML, and AI in Google Cloud
-    \item Google Cloud Computing Foundations: Infrastructure in Google Cloud
-    \item Google Cloud Computing Foundations: Networking
-    \item Introduction to AI and Machine Learning on Google Cloud
-    \item Prepare Data for ML APIs on Google Cloud Skill Badge
-    \item Set Up an App Dev Environment on Google Cloud Skill Badge
-    \item Use Machine Learning APIs on Google Cloud Skill Badge
-    \item Implement Load Balancing on Compute Engine Skill Badge
- \vspace{-8pt}
+    \textbf{Jesus In Chat}\hfill  Jan 2025\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Achieved \$400+ USD MRR with 90\% user retention rate through personalized biblical Q\&A responses.
+        \item Processed 10,000+ daily messages with 95\% accuracy using optimized WhatsApp API integration.
+    \end{itemize}
 
- %-----------Languages-----------
-\section{Idiomas}
-\begin{itemize}[leftmargin=0.15in, label={}]
-% \item Português - Nativo \\
-\item Inglês - Proficiência Profissional (B2)
-\vspace{-16pt}
-\end{itemize}
+    \textbf{MyVendas}\hfill  Mar 2025\\
+    \vspace{-3mm}
+    \begin{itemize} \itemsep -3pt
+        \item Successfully sold for \$3,000 USD, serving 50+ active users with 99.9\% uptime.
+        \item Implemented multi-tenant architecture supporting 100+ concurrent users with 200ms average response time.
+    \end{itemize}
+
+    \vspace{1mm}
+
+    % Skills section
+    \header{Skills}
+    \vspace{2mm}
+    \begin{longtable}{p{4cm}p{12cm}}
+        Programming Languages: & Typescript, Python, C, Go \\
+        Frontend: & React, Next.js, Tailwind, Three.js, Solid.js, Zustand, Redux \\
+        Databases \& Servers: & PostgreSQL, MySQL, MongoDB, WebSockets \\
+        Platforms \& Others: & AWS, Firebase, Git, Game Development \\
+    \end{longtable}
+    \vspace{1mm}
+
+    % Education section
+    \header{Education}
+    \vspace{2mm}
+    \textbf{Senai São Paulo}\hfill São Paulo, Brazil\\
+    Associate Degree in Information Technology \hfill Jan 2024 - Jan 2026\\
+
 \end{document}
